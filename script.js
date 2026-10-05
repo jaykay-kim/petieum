@@ -1,5 +1,44 @@
-const menuBtn=document.getElementById('menuBtn');const nav=document.getElementById('nav');menuBtn?.addEventListener('click',()=>nav.classList.toggle('open'));
-const modal=document.getElementById('modal');const title=document.getElementById('modalTitle');const text=document.getElementById('modalText');
-document.querySelectorAll('.selectPlan').forEach(btn=>btn.addEventListener('click',()=>{title.textContent='구독 요금제 선택';text.textContent=`선택한 요금제: ${btn.dataset.plan}. 현재는 베타 데모 단계이며 실제 결제는 PG 심사 후 연결됩니다.`;modal.hidden=false;}));
-document.getElementById('closeModal')?.addEventListener('click',()=>modal.hidden=true);document.getElementById('confirmDemo')?.addEventListener('click',()=>modal.hidden=true);
-document.getElementById('applyForm')?.addEventListener('submit',e=>{e.preventDefault();title.textContent='베타 신청이 접수되었습니다';text.textContent='데모 화면입니다. 실제 오픈 시 신청 정보는 암호화된 DB에 저장하고 개인정보 처리방침에 따라 관리합니다.';modal.hidden=false;e.target.reset();});
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
+if (menuBtn && nav) {
+  menuBtn.addEventListener('click', () => nav.classList.toggle('show'));
+}
+
+document.querySelectorAll('.detail-toggle').forEach((button) => {
+  button.addEventListener('click', () => {
+    const card = button.closest('.service-card');
+    card.classList.toggle('open');
+    button.textContent = card.classList.contains('open') ? '접기' : '상세보기';
+  });
+});
+
+document.querySelectorAll('.chip').forEach((chip) => {
+  chip.addEventListener('click', () => chip.classList.toggle('active'));
+});
+
+const modal = document.getElementById('signupModal');
+const selectedPlan = document.getElementById('selectedPlan');
+document.querySelectorAll('.open-modal').forEach((button) => {
+  button.addEventListener('click', () => {
+    if (selectedPlan) selectedPlan.value = button.dataset.plan || '베타 신청';
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+  });
+});
+const closeBtn = document.querySelector('.modal-close');
+if (closeBtn) closeBtn.addEventListener('click', () => closeModal());
+if (modal) modal.addEventListener('click', (event) => {
+  if (event.target === modal) closeModal();
+});
+function closeModal(){
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+}
+
+document.querySelectorAll('.signup-form').forEach((form) => {
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    alert('베타 신청 데모입니다. 실제 신청 기능은 정식 오픈 시 연결됩니다.');
+    closeModal();
+  });
+});
