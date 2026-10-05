@@ -1,0 +1,28 @@
+<svg width="720" height="640" viewBox="0 0 720 640" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="720" height="640" rx="38" fill="#FFF7EC"/>
+<circle cx="578" cy="92" r="86" fill="#E6FBF5"/><circle cx="96" cy="540" r="92" fill="#FFE1C7"/>
+<rect x="202" y="50" width="316" height="540" rx="42" fill="#17324D"/>
+<rect x="222" y="78" width="276" height="484" rx="32" fill="white"/>
+<rect x="248" y="110" width="224" height="82" rx="24" fill="#FFF3DF"/>
+<circle cx="290" cy="151" r="25" fill="#FF7A3D"/>
+<path d="M277 151C277 142 284 135 293 135H297C306 135 313 142 313 151C313 161 305 169 295 169H293C284 169 277 161 277 151Z" fill="#FFF3DF"/>
+<text x="332" y="145" font-family="Arial" font-weight="700" font-size="20" fill="#17324D">초코의 10월 기록</text>
+<text x="332" y="170" font-family="Arial" font-size="14" fill="#6B6F76">식욕·체중·복약 리포트</text>
+<rect x="248" y="216" width="103" height="86" rx="22" fill="#E6FBF5"/>
+<rect x="369" y="216" width="103" height="86" rx="22" fill="#FFF3DF"/>
+<text x="268" y="249" font-family="Arial" font-weight="700" font-size="14" fill="#17324D">복약률</text>
+<text x="268" y="278" font-family="Arial" font-weight="800" font-size="26" fill="#2CA58D">94%</text>
+<text x="389" y="249" font-family="Arial" font-weight="700" font-size="14" fill="#17324D">체중</text>
+<text x="389" y="278" font-family="Arial" font-weight="800" font-size="26" fill="#FF7A3D">+0.2</text>
+<rect x="248" y="326" width="224" height="38" rx="19" fill="#F4F1EE"/><rect x="248" y="382" width="224" height="38" rx="19" fill="#F4F1EE"/><rect x="248" y="438" width="224" height="38" rx="19" fill="#F4F1EE"/>
+<circle cx="273" cy="345" r="8" fill="#2CA58D"/><circle cx="273" cy="401" r="8" fill="#FF7A3D"/><circle cx="273" cy="457" r="8" fill="#17324D"/>
+<text x="294" y="350" font-family="Arial" font-size="14" fill="#17324D">관절 피로 기록 3회</text>
+<text x="294" y="406" font-family="Arial" font-size="14" fill="#17324D">다음 진료 질문 정리</text>
+<text x="294" y="462" font-family="Arial" font-size="14" fill="#17324D">맞춤 케어 제품 추천</text>
+<rect x="112" y="156" width="162" height="96" rx="28" fill="white" stroke="#EEE2D2" stroke-width="2"/>
+<text x="138" y="194" font-family="Arial" font-weight="800" font-size="19" fill="#17324D">AI Report</text>
+<text x="138" y="222" font-family="Arial" font-size="15" fill="#6B6F76">월간 요약</text>
+<rect x="476" y="374" width="164" height="108" rx="28" fill="white" stroke="#EEE2D2" stroke-width="2"/>
+<text x="504" y="414" font-family="Arial" font-weight="800" font-size="19" fill="#17324D">Care Box</text>
+<text x="504" y="442" font-family="Arial" font-size="15" fill="#6B6F76">월 1회 배송</text>
+</svg>
