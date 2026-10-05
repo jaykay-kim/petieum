@@ -1,27 +1,5 @@
-const navToggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.nav');
-navToggle?.addEventListener('click', () => nav.classList.toggle('open'));
-
-const dialog = document.querySelector('#paymentDialog');
-const selectedPlanText = document.querySelector('#selectedPlanText');
-const planSelect = document.querySelector('#planSelect');
-
-document.querySelectorAll('.select-plan').forEach((button) => {
-  button.addEventListener('click', () => {
-    const plan = button.dataset.plan;
-    const price = Number(button.dataset.price).toLocaleString('ko-KR');
-    if (planSelect) {
-      const matching = [...planSelect.options].find(o => o.textContent.includes(plan.split(' ')[0]));
-      if (matching) planSelect.value = matching.value;
-    }
-    selectedPlanText.textContent = `${plan} · ${price}원`;
-    dialog.showModal();
-  });
-});
-
-document.querySelector('#signupForm')?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.currentTarget);
-  selectedPlanText.textContent = `${formData.get('plan')} 신청 정보가 확인되었습니다.`;
-  dialog.showModal();
-});
+const menuBtn=document.getElementById('menuBtn');const nav=document.getElementById('nav');menuBtn?.addEventListener('click',()=>nav.classList.toggle('open'));
+const modal=document.getElementById('modal');const title=document.getElementById('modalTitle');const text=document.getElementById('modalText');
+document.querySelectorAll('.selectPlan').forEach(btn=>btn.addEventListener('click',()=>{title.textContent='구독 요금제 선택';text.textContent=`선택한 요금제: ${btn.dataset.plan}. 현재는 베타 데모 단계이며 실제 결제는 PG 심사 후 연결됩니다.`;modal.hidden=false;}));
+document.getElementById('closeModal')?.addEventListener('click',()=>modal.hidden=true);document.getElementById('confirmDemo')?.addEventListener('click',()=>modal.hidden=true);
+document.getElementById('applyForm')?.addEventListener('submit',e=>{e.preventDefault();title.textContent='베타 신청이 접수되었습니다';text.textContent='데모 화면입니다. 실제 오픈 시 신청 정보는 암호화된 DB에 저장하고 개인정보 처리방침에 따라 관리합니다.';modal.hidden=false;e.target.reset();});
