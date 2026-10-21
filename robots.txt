@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petieum.vercel.app/sitemap.xml
