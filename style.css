@@ -159,3 +159,63 @@ a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.section-p
     font-size: 13px;
   }
 }
+
+/* PetIeum Hero Evidence - Visual Refinement */
+
+.hero-evidence {
+  background: #ffffff;
+  border: 1px solid #dfe7e1;
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: 0 8px 28px rgba(16, 45, 37, 0.035);
+}
+
+.hero-evidence .hero-evidence-title {
+  font-family: inherit;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.5;
+  letter-spacing: -0.5px;
+  color: #153b31;
+  margin: 0 0 16px;
+}
+
+.hero-evidence p:not(.hero-evidence-title):not(.hero-evidence-source) {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: -0.3px;
+  color: #45594f;
+  margin: 0 0 16px;
+}
+
+.hero-evidence .hero-evidence-source {
+  border-top: 1px solid #e1eae4;
+  padding-top: 16px;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: #738179;
+}
+
+.hero-evidence .hero-evidence-source a {
+  color: #147a60;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  .hero-evidence {
+    padding: 20px;
+  }
+
+  .hero-evidence .hero-evidence-title {
+    font-size: 17px;
+  }
+
+  .hero-evidence p:not(.hero-evidence-title):not(.hero-evidence-source) {
+    font-size: 14px;
+  }
+}
