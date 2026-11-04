@@ -42,3 +42,13 @@ document.querySelectorAll('.signup-form').forEach((form) => {
     closeModal();
   });
 });
+
+
+// 4P update: launch the existing Google login window without changing Supabase auth.
+document.querySelectorAll('.auth-open-trigger').forEach(button => {
+  button.addEventListener('click', () => {
+    const launcher = document.getElementById('petieum-auth-launcher');
+    if (launcher) launcher.click();
+    else alert('로그인 화면을 불러오지 못했습니다. 페이지를 새로고침한 후 다시 시도해 주세요.');
+  });
+});
