@@ -19,6 +19,7 @@ style.textContent = `
 #petieum-auth-card{max-width:400px;width:100%;background:white;color:#1a2824;border-radius:18px;padding:28px;box-shadow:0 16px 44px #0003;position:relative}
 #petieum-auth-card h2{margin:0 0 12px;font-size:22px}#petieum-auth-card p{line-height:1.6;color:#4c5c55}#petieum-auth-card button{cursor:pointer}
 #petieum-google-btn{border:1px solid #ddd;border-radius:9px;padding:13px 12px;background:#fff;display:flex;align-items:center;justify-content:center;gap:12px;width:100%;font-weight:600;font-size:15px}
+#petieum-kakao-btn{border:1px solid #ead700;border-radius:9px;padding:13px 12px;background:#FEE500;color:#191919;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;font-weight:700;font-size:15px;margin-top:10px}
 #petieum-logout-btn{border:1px solid #ddd;background:#f7f7f7;border-radius:9px;padding:11px 15px;width:100%;font-weight:600}
 #petieum-auth-close{position:absolute;top:15px;right:17px;border:none;background:none;font-size:23px;color:#444}
 #petieum-auth-status{font-size:12px;min-height:18px;color:#a12a22;margin-top:12px;white-space:pre-wrap;overflow-wrap:anywhere}
@@ -30,7 +31,7 @@ overlay.id = 'petieum-auth-overlay';
 overlay.setAttribute('role', 'dialog');
 overlay.setAttribute('aria-modal', 'true');
 overlay.setAttribute('aria-label', '펫이음 계정 로그인');
-overlay.innerHTML = `<div id="petieum-auth-card"><button type="button" id="petieum-auth-close" aria-label="닫기">×</button><h2>펫이음에 오신 것을 환영합니다 🐾</h2><p id="petieum-auth-greeting">Google 계정으로 안전하고 간편하게 로그인하세요.</p><div id="petieum-auth-signed-out"><button type="button" id="petieum-google-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 5.38 6.51 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.27 5.48-4.8 7.18l7.73 6C44.38 38.03 46.98 31.89 46.98 24.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.41 14.41 0 019.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.2A23.85 23.85 0 000 24c0 3.86.92 7.5 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.92-2.13 15.89-5.8l-7.73-6C30.01 37.65 27.25 38.5 24 38.5c-6.26 0-11.57-4.22-13.47-9.91l-7.97 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google 계정으로 로그인</button></div><div id="petieum-auth-signed-in" hidden><p id="petieum-user-identity"></p><button type="button" id="petieum-logout-btn">로그아웃</button></div><div id="petieum-auth-status" role="status" aria-live="polite"></div></div>`;
+overlay.innerHTML = `<div id="petieum-auth-card"><button type="button" id="petieum-auth-close" aria-label="닫기">×</button><h2>펫이음에 오신 것을 환영합니다 🐾</h2><p id="petieum-auth-greeting">Google 또는 카카오 계정으로 로그인하세요.</p><div id="petieum-auth-signed-out"><button type="button" id="petieum-google-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 5.38 6.51 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.27 5.48-4.8 7.18l7.73 6C44.38 38.03 46.98 31.89 46.98 24.55z"/><path fill="#FBBC05" d="M10.53 28.59A14.41 14.41 0 019.75 24c0-1.59.27-3.13.76-4.59l-7.98-6.2A23.85 23.85 0 000 24c0 3.86.92 7.5 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.92-2.13 15.89-5.8l-7.73-6C30.01 37.65 27.25 38.5 24 38.5c-6.26 0-11.57-4.22-13.47-9.91l-7.97 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Google 계정으로 로그인</button><button type="button" id="petieum-kakao-btn" aria-label="카카오 계정으로 로그인">💬 카카오 계정으로 로그인</button></div><div id="petieum-auth-signed-in" hidden><p id="petieum-user-identity"></p><button type="button" id="petieum-logout-btn">로그아웃</button></div><div id="petieum-auth-status" role="status" aria-live="polite"></div></div>`;
 const launcher = document.createElement('button');
 launcher.type = 'button';
 launcher.id = 'petieum-auth-launcher';
@@ -47,7 +48,7 @@ function render(session){
  const user = session?.user;
  el('petieum-auth-signed-out').hidden = !!user;
  el('petieum-auth-signed-in').hidden = !user;
- el('petieum-auth-greeting').textContent = user ? '로그인되었습니다. 기존 펫이음 서비스를 계속 이용하실 수 있습니다.' : 'Google 계정으로 안전하고 간편하게 로그인하세요.';
+ el('petieum-auth-greeting').textContent = user ? '로그인되었습니다. 기존 펫이음 서비스를 계속 이용하실 수 있습니다.' : 'Google 또는 카카오 계정으로 로그인하세요.';
  el('petieum-user-identity').textContent = user ? `로그인 계정: ${user.email || user.id}` : '';
  launcher.textContent = user ? `🐾 ${user.user_metadata?.full_name || '내 계정'}` : '🐾 로그인';
  window.dispatchEvent(new CustomEvent('petieum:auth', { detail: { user: user ? {id:user.id,email:user.email} : null }}));
@@ -57,6 +58,14 @@ el('petieum-google-btn').addEventListener('click', async () => {
  message('구글 로그인 화면으로 이동합니다…');
  const {error}=await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+location.pathname}});
  if(error)message('로그인을 시작하지 못했습니다: '+error.message);
+});
+el('petieum-kakao-btn').addEventListener('click', async () => {
+ if(!supabase){message('로그인 설정이 아직 완료되지 않았습니다. petieum-auth-config.js를 확인하세요.');return;}
+ message('카카오 로그인 화면으로 이동합니다…');
+ try {
+  const {error}=await supabase.auth.signInWithOAuth({provider:'kakao',options:{redirectTo:location.origin+location.pathname}});
+  if(error)message('카카오 로그인을 시작하지 못했습니다: '+error.message);
+ } catch(err) { message('카카오 로그인 연결 실패: '+(err?.message || String(err))); }
 });
 el('petieum-logout-btn').addEventListener('click', async () => {
  if(!supabase)return;
